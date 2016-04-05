@@ -1,0 +1,24 @@
+"*":
+  "exception-reporting":
+    userId: "52481261-8251-29dc-4862-f1a0a6a91517"
+  welcome:
+    showOnStartup: false
+  core:
+    disabledPackages: [
+      "linter-jscs"
+    ]
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
+  editor:
+    invisibles: {}
+    showIndentGuide: true
+  "tree-view": {}
+  "api-workbench": {}
+  "linter-jscs":
+    configPath: ".jscsrc"
+".ini.source":
+  editor:
+    showInvisibles: true
+    tabLength: 4

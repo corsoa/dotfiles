@@ -1,0 +1,13 @@
+packages: [
+  "atom-beautify"
+  "editorconfig"
+  "git-log"
+  "git-plus"
+  "jshint"
+  "linter"
+  "linter-jscs"
+  "linter-php"
+  "package-sync"
+  "project-manager"
+  "remote-sync"
+]
