@@ -30,6 +30,7 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'wincent/command-t'
 Plugin 'kshenoy/vim-signature'
 Plugin 'tpope/vim-surround'
+Plugin 'christoomey/vim-tmux-navigator'
 "All of your Plugins must be added before the following line
 
 call vundle#end()            " required
