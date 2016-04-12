@@ -16,6 +16,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'wookiehangover/jshint.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'scrooloose/syntastic'
@@ -58,7 +59,7 @@ map <right> <nop>
 vmap "+y :!xclip -f -sel clip
 map "+p :r!xclip -o -sel clip
 
-
+set encoding=utf8
 set nu
 set tabstop=4
 set shiftwidth=4
@@ -71,11 +72,12 @@ set statusline+=%*
 
 let mapleader=","
 let NERDTreeShowHidden=1
-let g:JSHintHighlightErrorLine = 0
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:airline_powerline_fonts=1
+let g:JSHintHighlightErrorLine=0
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
 autocmd FileType javascript let b:syntastic_checkers = findfile('.jscsrc', '.;') != '' ? ['jscs'] : ['jshint']
 syntax on
 set background=dark
