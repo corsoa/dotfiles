@@ -11,7 +11,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'wookiehangover/jshint.vim'
@@ -66,6 +67,7 @@ set shiftwidth=4
 set expandtab
 set ignorecase
 set clipboard+=unnamedplus
+set laststatus=2
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -73,6 +75,7 @@ set statusline+=%*
 let mapleader=","
 let NERDTreeShowHidden=1
 let g:airline_powerline_fonts=1
+let g:airline_theme='powerlineish'
 let g:JSHintHighlightErrorLine=0
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
@@ -82,3 +85,8 @@ autocmd FileType javascript let b:syntastic_checkers = findfile('.jscsrc', '.;')
 syntax on
 set background=dark
 colorscheme solarized
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+  let g:airline_symbols.space = "\ua0"
+set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12
