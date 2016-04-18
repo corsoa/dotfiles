@@ -22,7 +22,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/taglist.vim'
-Plugin 'shougo/neosnippet.vim'
 Plugin 'benmills/vimux'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -33,6 +32,8 @@ Plugin 'wincent/command-t'
 Plugin 'kshenoy/vim-signature'
 Plugin 'tpope/vim-surround'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'NLKNguyen/papercolor-theme'
+
 "All of your Plugins must be added before the following line
 
 call vundle#end()            " required
@@ -60,13 +61,28 @@ map <right> <nop>
 vmap "+y :!xclip -f -sel clip
 map "+p :r!xclip -o -sel clip
 
+" formatting
 set encoding=utf8
 set nu
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set autoindent
+set smartindent
+set cindent
+set copyindent
+set preserveindent
+
 set ignorecase
 set clipboard+=unnamedplus
+set t_Co=256
+
+"highlight current
+set cursorline
+set cursorcolumn
+let &colorcolumn=join(range(101,255),',')
+
+" statusline
 set laststatus=2
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -84,7 +100,7 @@ let g:syntastic_check_on_wq=0
 autocmd FileType javascript let b:syntastic_checkers = findfile('.jscsrc', '.;') != '' ? ['jscs'] : ['jshint']
 syntax on
 set background=dark
-colorscheme solarized
+colorscheme PaperColor 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif

@@ -71,4 +71,4 @@ if [ -f "/home/aaron/.aaronrc" ]
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  
