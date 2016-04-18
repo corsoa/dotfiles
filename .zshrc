@@ -51,8 +51,9 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git, github, git-flow, tmux, tmuxinator, pyenv, pylint, composer, npm, pip, debian, ember-cli)
 
-# User configuration
+DISABLE_AUTO_TITLE=true
 
+# User configuration
 export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 source $ZSH/oh-my-zsh.sh
 
@@ -60,6 +61,7 @@ alias ll="ls -lah"
 alias sourceme="source ~/.zshrc"
 
 export EDITOR='vim'
+alias joinme="tmux attach-session -t aaron"
 export LC_ALL="en_US.UTF-8"
 export LANG='en_US.UTF-8'
 
