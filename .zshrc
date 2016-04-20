@@ -59,7 +59,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias ll="ls -lah"
 alias sourceme="source ~/.zshrc"
-
+alias tmux="tmux -2"
 export EDITOR='vim'
 alias joinme="tmux attach-session -t aaron"
 export LC_ALL="en_US.UTF-8"

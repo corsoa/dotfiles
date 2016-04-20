@@ -39,6 +39,7 @@ alias egrep='egrep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias tmux="tmux -2" 
 alias joinme="tmux attach-session -t aaron"
 alias leave="tmux detach"
 
