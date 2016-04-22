@@ -52,9 +52,10 @@ ZSH_THEME="robbyrussell"
 plugins=(git, github, git-flow, tmux, tmuxinator, pyenv, pylint, composer, npm, pip, debian, ember-cli)
 
 DISABLE_AUTO_TITLE=true
-
+keytimeout=1
 # User configuration
-export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/node/bin"
+
 source $ZSH/oh-my-zsh.sh
 
 alias ll="ls -lah"

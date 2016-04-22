@@ -52,7 +52,7 @@ filetype plugin indent on    " required
 filetype plugin on
 
 " format JSON
-map json :%!python -m json.tool
+"map json :%!python -m json.tool
 map <C-n> :NERDTreeToggle<CR>
 map <up> <nop>
 map <down> <nop>
@@ -72,11 +72,11 @@ set smartindent
 set cindent
 set copyindent
 set preserveindent
-
+set esckeys
 set ignorecase
 set clipboard+=unnamedplus
 set t_Co=256
-
+set timeoutlen=500
 "highlight current
 set cursorline
 set cursorcolumn
