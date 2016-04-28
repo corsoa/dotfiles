@@ -11,29 +11,32 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+" frequently used
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'benmills/vimux'
+Plugin 'suan/vim-instant-markdown'
+
+" evaluating
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'wookiehangover/jshint.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/taglist.vim'
-Plugin 'benmills/vimux'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'Shougo/deoplete.nvim'
-Plugin 'suan/vim-instant-markdown'
 Plugin 'wincent/command-t'
 Plugin 'kshenoy/vim-signature'
 Plugin 'tpope/vim-surround'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'NLKNguyen/papercolor-theme'
-
+Plugin 'elzr/vim-json'
 "All of your Plugins must be added before the following line
 
 call vundle#end()            " required
