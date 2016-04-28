@@ -88,6 +88,11 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+"conditional relative line numbers
+set rnu
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber
+
 let mapleader=","
 let NERDTreeShowHidden=1
 let g:airline_powerline_fonts=1
