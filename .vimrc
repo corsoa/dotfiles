@@ -21,22 +21,20 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
 Plugin 'suan/vim-instant-markdown'
-
-" evaluating
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'wookiehangover/jshint.vim'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'wincent/command-t'
 Plugin 'kshenoy/vim-signature'
 Plugin 'tpope/vim-surround'
-Plugin 'elzr/vim-json'
+" evaluating
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'scrooloose/nerdcommenter'
+"Plugin 'wookiehangover/jshint.vim'
+"Plugin 'editorconfig/editorconfig-vim'
+"Plugin 'vim-scripts/taglist.vim'
+"Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'majutsushi/tagbar'
+"Plugin 'Shougo/deoplete.nvim'
+"Plugin 'wincent/command-t'
+"Plugin 'elzr/vim-json'
 "All of your Plugins must be added before the following line
 
 call vundle#end()            " required
@@ -79,7 +77,7 @@ set esckeys
 set ignorecase
 set clipboard+=unnamedplus
 set t_Co=256
-set timeoutlen=500
+set timeout timeoutlen=500
 "highlight current
 set cursorline
 set cursorcolumn
@@ -95,6 +93,14 @@ set statusline+=%*
 set rnu
 :au FocusLost * :set number
 :au FocusGained * :set relativenumber
+" remap move lines up / down
+
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 let mapleader=","
 let NERDTreeShowHidden=1
