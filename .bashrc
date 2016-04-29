@@ -194,6 +194,10 @@ export PATH=$PATH:/usr/local/node/bin
 export EDITOR="vim"
 unset env
 
+if [ -f "/home/$(whoami)/.machines" ]
+  then
+  source /home/$(whoami)/.machines
+fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
