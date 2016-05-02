@@ -23,10 +23,11 @@ Plugin 'benmills/vimux'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'kshenoy/vim-signature'
 Plugin 'tpope/vim-surround'
-" evaluating
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
+" evaluating
+
 "Plugin 'wookiehangover/jshint.vim'
 "Plugin 'editorconfig/editorconfig-vim'
 "Plugin 'vim-scripts/taglist.vim'
@@ -35,6 +36,7 @@ Plugin 'scrooloose/nerdcommenter'
 "Plugin 'Shougo/deoplete.nvim'
 "Plugin 'wincent/command-t'
 "Plugin 'elzr/vim-json'
+"Plugin 'nanotech/jellybeans.vim'
 "All of your Plugins must be added before the following line
 
 call vundle#end()            " required
@@ -63,6 +65,10 @@ vmap "+y :!xclip -f -sel clip
 map "+p :r!xclip -o -sel clip
 
 " formatting
+if has('gui_running')
+    set guifont=Courier\ 10\ 
+endif
+
 set encoding=utf8
 set nu
 set tabstop=4
