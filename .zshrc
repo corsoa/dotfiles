@@ -58,11 +58,7 @@ export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:
 
 source $ZSH/oh-my-zsh.sh
 
-alias ll="ls -lah"
-alias sourceme="source ~/.zshrc"
-alias tmux="tmux -2"
 export EDITOR='vim'
-alias joinme="tmux attach-session -t aaron"
 export LC_ALL="en_US.UTF-8"
 export LANG='en_US.UTF-8'
 
@@ -74,6 +70,12 @@ fi
 if [ -f "/home/$(whoami)/.machines" ]
   then
   source /home/$(whoami)/.machines
+fi
+
+
+if [ -f "/home/$(whoami)/.aliases" ]
+  then
+  source /home/$(whoami)/.aliases
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

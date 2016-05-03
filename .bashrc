@@ -24,25 +24,6 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# User specific aliases and functions
-
-alias gitlog="git log --oneline --abbrev-commit --all --graph --decorate --color"
-alias sourceme="source ~/.bashrc"
-alias ..="cd ../"
-alias ..2="cd ../../"
-alias ..3="cd ../../../"
-alias ..4="cd ../../../../"
-alias ssh='ssh -o ServerAliveInterval=30 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no '
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias tmux="tmux -2" 
-alias joinme="tmux attach-session -t aaron"
-alias leave="tmux detach"
-
 # Source global definitions
 if [ -f /etc/bashrc ]; then
         . /etc/bashrc
@@ -51,8 +32,6 @@ fi
 # display directories in green
 LS_COLORS="ow=01;92:di=01;92"
 export LS_COLORS
-alias ls='ls --color=always'
-alias ll='ls -la | more'
 
 # The colors that the prompt uses
 BLUE="\[\033[0;34m\]"
@@ -125,7 +104,6 @@ PS4='+ '
 # Execute the prompt function
 proml
 
-#alias vi=vim
 PATH=${HOME}/bin:${PATH}
 
 # Note: ~/.ssh/environment should not be used, as it
@@ -177,6 +155,10 @@ fi
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
 fi
 
 # enable programmable completion features (you don't need to enable

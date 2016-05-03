@@ -1,0 +1,18 @@
+alias ll="ls -lahF"
+alias ls='ls --color=always'
+alias la='ls -A'
+alias l='ls -CF'
+alias sourceme="source ~/.zshrc"
+alias tmux="tmux -2"
+alias joinme="tmux attach-session -t aaron"
+alias leave="tmux detach"
+alias gitlog="git log --oneline --abbrev-commit --all --graph --decorate --color"
+alias sourceme="source ~/.bashrc"
+alias ..="cd ../"
+alias ..2="cd ../../"
+alias ..3="cd ../../../"
+alias ..4="cd ../../../../"
+alias ssh='ssh -o ServerAliveInterval=30 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no '
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
