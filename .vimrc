@@ -27,7 +27,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
 " evaluating
-
+Plugin 'chrisbra/improvedft'
 "Plugin 'wookiehangover/jshint.vim'
 "Plugin 'editorconfig/editorconfig-vim'
 "Plugin 'vim-scripts/taglist.vim'
@@ -117,7 +117,8 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
-autocmd FileType javascript let b:syntastic_checkers = findfile('.jscsrc', '.;') != '' ? ['jscs'] : ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
+"autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc', '.;') != '' ? ['eslint'] : ['jshint']
 syntax on
 set background=dark
 colorscheme PaperColor 
