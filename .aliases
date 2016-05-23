@@ -17,3 +17,4 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias whatip="ip addr | grep inet | grep -v inet6 | grep -Ev '\slo' | cut -d ' ' -f6 | cut -d '/' -f1"
+alias dirs="ls -aldh .*/ */"
