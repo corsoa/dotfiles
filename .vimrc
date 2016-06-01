@@ -54,13 +54,15 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 filetype plugin on
 
-" format JSON
-"map json :%!python -m json.tool
 map <C-n> :NERDTreeToggle<CR>
+
+"Disable arrow keys on normal mode 
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+
+"Use system clipboard for copy/paste
 vmap "+y :!xclip -f -sel clip
 map "+p :r!xclip -o -sel clip
 
@@ -84,6 +86,7 @@ set ignorecase
 set clipboard+=unnamedplus
 set t_Co=256
 set timeout timeoutlen=500
+
 "highlight current
 set cursorline
 set cursorcolumn
@@ -99,8 +102,8 @@ set statusline+=%*
 set rnu
 :au FocusLost * :set number
 :au FocusGained * :set relativenumber
-" remap move lines up / down
 
+" remap move lines up / down
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
@@ -108,22 +111,32 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
+"consistent visual indent
+vnoremap < <gv
+vnoremap > >gv
+
+"General settings
 let mapleader=","
 let NERDTreeShowHidden=1
+
+"Theme
 let g:airline_powerline_fonts=1
 let g:airline_theme='powerlineish'
+set background=dark
+syntax on
+colorscheme PaperColor 
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+  let g:airline_symbols.space = "\ua0"
+set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12
+
+"Syntax checkers
 let g:JSHintHighlightErrorLine=0
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
 let g:syntastic_javascript_checkers = ['eslint']
-"autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc', '.;') != '' ? ['eslint'] : ['jshint']
-syntax on
-set background=dark
-colorscheme PaperColor 
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-  let g:airline_symbols.space = "\ua0"
-set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12
+
