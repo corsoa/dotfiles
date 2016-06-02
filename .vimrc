@@ -20,14 +20,16 @@ Plugin 'scrooloose/syntastic'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
-Plugin 'suan/vim-instant-markdown'
+"Plugin 'suan/vim-instant-markdown'
 Plugin 'kshenoy/vim-signature'
 Plugin 'tpope/vim-surround'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
 " evaluating
-Plugin 'chrisbra/improvedft'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+"Plugin 'chrisbra/improvedft'
 "Plugin 'wookiehangover/jshint.vim'
 "Plugin 'editorconfig/editorconfig-vim'
 "Plugin 'vim-scripts/taglist.vim'
@@ -65,6 +67,9 @@ map <right> <nop>
 "Use system clipboard for copy/paste
 vmap "+y :!xclip -f -sel clip
 map "+p :r!xclip -o -sel clip
+
+"sane copy paste
+vnoremap <C-c> "*y
 
 " formatting
 if has('gui_running')

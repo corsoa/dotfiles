@@ -171,9 +171,14 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PATH=$PATH:/usr/local/node/bin
 
+function git_diff() {
+  git diff --no-ext-diff -w "$@" | vim -R –
+}
+
+export PATH=$PATH:/usr/local/node/bin
 export EDITOR="vim"
+
 unset env
 
 if [ -f "/home/$(whoami)/.machines" ]
