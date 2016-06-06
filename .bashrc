@@ -161,6 +161,17 @@ if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
 
+if [ -f ~/.machines ]; then
+  source ~/.machines
+fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if [ -f "~/work.alises" ]
+  then
+  source ~/work.aliases
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -181,18 +192,3 @@ export EDITOR="vim"
 
 unset env
 
-if [ -f "/home/$(whoami)/.machines" ]
-  then
-  source /home/$(whoami)/.machines
-fi
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-if [ -f "~/work.alises" ]
-  then
-  source ~/work.aliases
-fi
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/aaron/.sdkman"
-[[ -s "/home/aaron/.sdkman/bin/sdkman-init.sh" ]] && source "/home/aaron/.sdkman/bin/sdkman-init.sh"

@@ -67,16 +67,14 @@ if [ -f "/home/aaron/.aaronrc" ]
   source /home/aaron/.aaronrc
 fi
 
-if [ -f "/home/$(whoami)/.machines" ]
-  then
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi
+
+if [ -f ~/.machines ]; then
   source /home/$(whoami)/.machines
 fi
 
-
-if [ -f "/home/$(whoami)/.aliases" ]
-  then
-  source /home/$(whoami)/.aliases
-fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  
