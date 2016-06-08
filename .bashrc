@@ -42,7 +42,9 @@ LIGHT_GREEN="\[\033[1;32m\]"
 WHITE="\[\033[1;37m\]"
 LIGHT_GRAY="\[\033[0;37m\]"
 
-export TERM="screen-256color"
+export TERM="xterm-256color"
+export LC_ALL="en_US.UTF-8"
+export LANG='en_US.UTF-8'
 
 # Show user name
 function __prompt_username {
