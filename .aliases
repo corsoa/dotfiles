@@ -23,3 +23,4 @@ tmuxattach() {
     tmux attach-session -t $1
 }
 alias tmuxa=tmuxattach
+alias dirs="ls -lah | grep '^d'"
