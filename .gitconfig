@@ -1,0 +1,12 @@
+[user]
+	email = aaron@corsoa.com
+	name = Aaron Corso
+[diff]
+	diff = git_diff_wrapper 
+    tool = vimdiff
+[pager]
+    diff =
+[difftool]
+	prompt = false
+[alias]
+	d = difftool

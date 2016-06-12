@@ -1,3 +1,4 @@
+alias cl="clear"
 alias ll="ls -lahF"
 alias ls='ls --color=always'
 alias la='ls -A'
