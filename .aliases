@@ -1,14 +1,30 @@
+tmuxattach() {
+    tmux attach-session -t $1
+}
+tmuxDefaultJoin() {
+    if tmux ls 2>&1 | grep failed; then
+        tmux new -s aaron
+    else
+        tmux attach-session -t aaron
+    fi
+}
+sourceFiles() {
+    if [ $SHELL == "/bin/zsh" ]; then
+        source ~/.zshrc
+    elif [ $SHELL == "bin/bash" ]; then
+        source ~/.bashrc
+    fi
+}
 alias cl="clear"
 alias ll="ls -lahF"
 alias ls='ls --color=always'
 alias la='ls -A'
 alias l='ls -CF'
-alias sourceme="source ~/.zshrc"
+alias sourceme=sourceFiles
 alias tmux="tmux -2"
-alias joinme="tmux attach-session -t aaron"
+alias joinme=tmuxDefaultJoin
 alias leave="tmux detach"
 alias gitlog="git log --oneline --abbrev-commit --all --graph --decorate --color"
-alias sourceme="source ~/.bashrc"
 alias ..="cd ../"
 alias ..2="cd ../../"
 alias ..3="cd ../../../"
@@ -19,8 +35,5 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias whatip="ip addr | grep inet | grep -v inet6 | grep -Ev '\slo' | cut -d ' ' -f6 | cut -d '/' -f1"
 alias dirs="ls -aldh .*/ */"
-tmuxattach() {
-    tmux attach-session -t $1
-}
 alias tmuxa=tmuxattach
 alias dirs="ls -lah | grep '^d'"
