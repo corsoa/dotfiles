@@ -1,0 +1,5 @@
+alias nodessh="ssh -X -L 8080:127.0.0.1:8080 -L 5858:127.0.0.1:5858 -L 5859:127.0.0.1:5859 -R 4444:127.0.0.1:4444"
+ 
+if [ -f ~/.work_machines ]; then
+    source ~/.work_machines
+fi
