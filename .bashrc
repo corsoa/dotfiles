@@ -8,8 +8,8 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
-
+export HISTCONTROL=ignoreboth
+export HISTFILE="$HOME/.bash_history"
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -29,6 +29,31 @@ if [ -f /etc/bashrc ]; then
         . /etc/bashrc
 fi
 
+# look for, and enable, command-not-found
+[ -f /usr/share/doc/pkgfile/command-not-found.bash ] && . /usr/share/doc/pkgfile/command-not-found.bash
+
+# set env vars for prompt addons
+export ENHANCED_PROMPT=true
+export GIT_PROMPT_ON=true
+export GIT_PROMPT_DETAILED=true
+
+# load prompt addons
+[ -f ~/.git-completion ] && . ~/.git-completion
+[ -f ~/.promptrc ] && . ~/.promptrc
+
+# enable bash-completion if it exists
+if [ -f /etc/bash_completion ]
+then
+	. /etc/bash_completion
+elif [ -f /usr/share/bash-completion/bash_completion ]
+then
+	. /usr/share/bash-completion/bash_completion
+elif which brew &>/dev/null && [ -f $(brew --prefix)/etc/bash_completion ]
+then
+	. $(brew --prefix)/etc/bash_completion
+fi
+
+export EDITOR="vim"
 # display directories in green
 LS_COLORS="ow=01;92:di=01;92"
 export LS_COLORS
@@ -61,6 +86,10 @@ function __prompt_hostname {
 # Show current directory
 function __prompt_pwd {
     echo "$(pwd)"
+}
+
+function git_diff() {
+  git diff --no-ext-diff -w "$@" | vim -R –
 }
 
 function __prompt_git_branch {
@@ -174,23 +203,13 @@ if [ -f "~/work.alises" ]
   source ~/work.aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
+export NVM_DIR="/home/$(whoami)/.nvm"
 
-function git_diff() {
-  git diff --no-ext-diff -w "$@" | vim -R –
-}
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  
+
+[[ -s "/home/$(whoami)/.gvm/scripts/gvm" ]] && source "/home/$(whoami)/.gvm/scripts/gvm"
 
 export PATH=$PATH:/usr/local/node/bin
-export EDITOR="vim"
 
 unset env
 

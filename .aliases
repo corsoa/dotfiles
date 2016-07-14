@@ -25,10 +25,6 @@ alias tmux="tmux -2"
 alias joinme=tmuxDefaultJoin
 alias leave="tmux detach"
 alias gitlog="git log --oneline --abbrev-commit --all --graph --decorate --color"
-alias ..="cd ../"
-alias ..2="cd ../../"
-alias ..3="cd ../../../"
-alias ..4="cd ../../../../"
 alias ssh='ssh -o ServerAliveInterval=30 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no '
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
