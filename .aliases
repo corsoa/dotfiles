@@ -16,8 +16,8 @@ sourceFiles() {
     fi
 }
 alias cl="clear"
-alias ll="ls -lahF"
-alias ls='ls --color=always'
+alias ll="ls -lah"
+alias ls='ls'
 alias la='ls -A'
 alias l='ls -CF'
 alias sourceme=sourceFiles
@@ -33,3 +33,4 @@ alias whatip="ip addr | grep inet | grep -v inet6 | grep -Ev '\slo' | cut -d ' '
 alias dirs="ls -aldh .*/ */"
 alias tmuxa=tmuxattach
 alias dirs="ls -lah | grep '^d'"
+alias vi="vim"
