@@ -43,10 +43,10 @@ for f in $DIR/*; do
 done
 
 #do git diffs with vim
-sudo ln -fs $DIR/git_diff_wrapper /usr/bin/git_diff_wrapper 
+#sudo ln -fs $DIR/git_diff_wrapper /usr/bin/git_diff_wrapper 
 
 #reassign vi to vim
-sudo ln -fs /usr/bin/vim /usr/bin/vi
+#sudo ln -fs /usr/bin/vim /usr/bin/vi
 
 #do a vundle install
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
