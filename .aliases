@@ -22,9 +22,9 @@ if command_exists gls ; then
     alias ls='gls --color=auto' #use ls from homebrewe install of coreutils if available
 fi
 alias cl="clear"
-alias ll="ls -lah"
-alias la='ls -A'
-alias l='ls -CF'
+alias ll="ls -lah --color=auto"
+alias la='ls -A --color=auto'
+alias l='ls -CF --color=auto'
 alias lol='ll $(find . -maxdepth 1 -type l -print)'
 alias sourceme=sourceFiles
 alias tmux="tmux -2"

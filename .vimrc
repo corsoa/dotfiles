@@ -97,6 +97,7 @@ set copyindent
 set preserveindent
 set esckeys
 set ignorecase
+set foldmethod=manual
 set clipboard+=unnamedplus
 set t_Co=256
 set timeout timeoutlen=500
