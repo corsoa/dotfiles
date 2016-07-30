@@ -49,22 +49,20 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bower, git, github, git-flow, tmux, tmuxinator, pyenv, pylint, composer, npm, pip, debian, ember-cli)
+plugins=(bower, git, github, git-flow, tmux, tmuxinator, pyenv, pylint, composer, npm, pip, debian, ember-cli zsh-syntax-highlighting)
 
 DISABLE_AUTO_TITLE=true
 keytimeout=1
 # User configuration
-export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/node/bin"
 
 source $ZSH/oh-my-zsh.sh
 
-export EDITOR='vim'
-export LC_ALL="en_US.UTF-8"
-export LANG='en_US.UTF-8'
+if [ -f ~/.exports ]; then
+  source ~/.exports 
+fi
 
-if [ -f "/home/aaron/.aaronrc" ]
-  then
-  source /home/aaron/.aaronrc
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
 
 if [ -f ~/.aliases ]; then
@@ -72,9 +70,17 @@ if [ -f ~/.aliases ]; then
 fi
 
 if [ -f ~/.machines ]; then
-  source /home/$(whoami)/.machines
+  source ~/.machines
 fi
 
+if [ -f "~/work.alises" ]
+  then
+  source ~/work.aliases
+fi
+
+if [ -f "/home/aaron/.aaronrc" ]
+  then
+  source /home/aaron/.aaronrc
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  
