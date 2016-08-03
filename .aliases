@@ -5,7 +5,7 @@ tmuxattach() {
     tmux attach-session -t $1
 }
 tmuxDefaultJoin() {
-    if tmux ls 2>&1 | grep failed; then
+    if tmux ls 2>&1 | grep -iE '(failed|no server)'; then
         tmux new -s aaron
     else
         tmux attach-session -t aaron

@@ -29,16 +29,6 @@ Plugin 'scrooloose/nerdcommenter'
 " evaluating
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-"Plugin 'chrisbra/improvedft'
-"Plugin 'wookiehangover/jshint.vim'
-"Plugin 'editorconfig/editorconfig-vim'
-"Plugin 'vim-scripts/taglist.vim'
-"Plugin 'ctrlpvim/ctrlp.vim'
-"Plugin 'majutsushi/tagbar'
-"Plugin 'Shougo/deoplete.nvim'
-"Plugin 'wincent/command-t'
-"Plugin 'elzr/vim-json'
-"Plugin 'nanotech/jellybeans.vim'
 "All of your Plugins must be added before the following line
 
 call vundle#end()            " required
@@ -80,10 +70,6 @@ map "+p :r!xclip -o -sel clip
 "sane copy paste
 vnoremap <C-c> "*y
 
-" formatting
-if has('gui_running')
-    set guifont=Courier\ 10\ 
-endif
 
 set encoding=utf8
 set nu
@@ -100,6 +86,9 @@ set ignorecase
 set foldmethod=manual
 set clipboard+=unnamedplus
 set t_Co=256
+if exists('$TMUX')
+    set term=screen-256color
+endif
 set timeout timeoutlen=500
 
 "highlight current
@@ -144,9 +133,21 @@ colorscheme PaperColor
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-  let g:airline_symbols.space = "\ua0"
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.space = "\ua0"
 set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12
-
 "Syntax checkers
 let g:JSHintHighlightErrorLine=0
 let g:syntastic_always_populate_loc_list=1
