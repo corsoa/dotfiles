@@ -73,14 +73,21 @@ if [ -f ~/.machines ]; then
   source ~/.machines
 fi
 
-if [ -f "~/work.alises" ]
-  then
-  source ~/work.aliases
+if [ -f ~/.work_machines ]; then
+  source ~/.work_machines
 fi
 
-if [ -f "/home/aaron/.aaronrc" ]
+if [ -f ~/.work_alises ]
+  then
+  source ~/.work_aliases
+fi
+
+if [ -f /home/aaron/.aaronrc ]
   then
   source /home/aaron/.aaronrc
 fi
+
+export NVM_DIR="/home/vagrant/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

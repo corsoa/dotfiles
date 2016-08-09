@@ -136,7 +136,6 @@ PS4='+ '
 proml
 
 PATH=${HOME}/bin:${PATH}
-
 # Note: ~/.ssh/environment should not be used, as it
 #       already has a different purpose in SSH.
 
@@ -198,9 +197,12 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-if [ -f "~/work.alises" ]
-  then
-  source ~/work.aliases
+if [ -f ~/.work_alises ]; then
+  source ~/.work_aliases
+fi
+
+if [ -f ~/.work_machines ]; then
+  source ~/.work_machines
 fi
 
 export NVM_DIR="/home/$(whoami)/.nvm"
@@ -208,8 +210,10 @@ export NVM_DIR="/home/$(whoami)/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  
 
 [[ -s "/home/$(whoami)/.gvm/scripts/gvm" ]] && source "/home/$(whoami)/.gvm/scripts/gvm"
-
 export PATH=$PATH:/usr/local/node/bin
 
+if [ -f ~/.exports ]; then
+    source ~/.exports
+fi
 unset env
 
