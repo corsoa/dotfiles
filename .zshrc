@@ -57,9 +57,6 @@ keytimeout=1
 
 source $ZSH/oh-my-zsh.sh
 
-if [ -f ~/.exports ]; then
-  source ~/.exports 
-fi
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -87,7 +84,12 @@ if [ -f /home/aaron/.aaronrc ]
   source /home/aaron/.aaronrc
 fi
 
-export NVM_DIR="/home/vagrant/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+if [ -f ~/.exports ]; then
+  source ~/.exports 
+fi
+
+if [ -f ~/.work_exports ]; then
+    source ~/.work_exports
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -8,3 +8,10 @@ export ENHANCED_PROMPT=true
 export GIT_PROMPT_ON=true
 export GIT_PROMPT_DETAILED=true
 export PATH=$PATH:/usr/local/node/bin
+
+export NVM_DIR="/home/$(whoami)/.nvm"
+
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  
+
+[[ -s "/home/$(whoami)/.gvm/scripts/gvm" ]] && source "/home/$(whoami)/.gvm/scripts/gvm"
+export PATH=$PATH:/usr/local/node/bin

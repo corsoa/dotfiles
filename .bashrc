@@ -197,7 +197,7 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-if [ -f ~/.work_alises ]; then
+if [ -f ~/.work_aliases ]; then
   source ~/.work_aliases
 fi
 
@@ -205,15 +205,12 @@ if [ -f ~/.work_machines ]; then
   source ~/.work_machines
 fi
 
-export NVM_DIR="/home/$(whoami)/.nvm"
-
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  
-
-[[ -s "/home/$(whoami)/.gvm/scripts/gvm" ]] && source "/home/$(whoami)/.gvm/scripts/gvm"
-export PATH=$PATH:/usr/local/node/bin
-
 if [ -f ~/.exports ]; then
     source ~/.exports
+fi
+
+if [ -f ~/.work_exports ]; then
+    source ~/.work_exports
 fi
 unset env
 
