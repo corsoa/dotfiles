@@ -49,7 +49,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bower, git, github, git-flow, tmux, tmuxinator, pyenv, pylint, composer, npm, pip, debian, ember-cli zsh-syntax-highlighting)
+plugins=(bower, git, github, git-flow, tmux, tmuxinator, pyenv, pylint, composer, npm, pip, debian, ember-cli zsh-syntax-highlighting aws docker)
 
 DISABLE_AUTO_TITLE=true
 keytimeout=1
@@ -74,7 +74,7 @@ if [ -f ~/.work_machines ]; then
   source ~/.work_machines
 fi
 
-if [ -f ~/.work_alises ]
+if [ -f ~/.work_aliases ]
   then
   source ~/.work_aliases
 fi
