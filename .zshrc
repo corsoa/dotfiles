@@ -57,9 +57,12 @@ keytimeout=1
 
 source $ZSH/oh-my-zsh.sh
 
+if [ -f ~/.ssh_load ]; then
+    source ~/.ssh_load
+fi
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+    source ~/.bash_aliases
 fi
 
 if [ -f ~/.aliases ]; then
