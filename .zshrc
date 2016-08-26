@@ -55,6 +55,9 @@ DISABLE_AUTO_TITLE=true
 keytimeout=1
 # User configuration
 
+if [[ $(whoami) = "root" ]]; then
+    export ZSH="/root/.oh-my-zsh"
+fi
 source $ZSH/oh-my-zsh.sh
 
 if [ -f ~/.ssh_load ]; then
