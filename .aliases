@@ -1,4 +1,18 @@
 #!/bin/bash
+bg() {
+    if [[ $# -eq 1 && $1 = - ]]; then
+        builtin bg %-
+    else
+        builtin bg %"$@"
+    fi
+}
+fg() {
+    if [[ $# -eq 1 && $1 = - ]]; then
+        builtin fg %-
+    else
+        builtin fg %"$@"
+    fi
+}
 command_exists () {
     type "$1" &> /dev/null ;
 }
