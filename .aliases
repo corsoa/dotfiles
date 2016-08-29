@@ -1,5 +1,14 @@
+#!/bin/bash
 command_exists () {
     type "$1" &> /dev/null ;
+}
+findListeningPort() {
+    theCmd=$(sudo netstat -tulpn | grep $1)
+    if [ $? -eq 0 ] && [ -n $theCmd ]; then
+        echo $theCmd 
+    else
+        echo "Nothing listening on $1"
+    fi
 }
 tmuxattach() {
     tmux attach-session -t $1
@@ -12,7 +21,7 @@ tmuxDefaultJoin() {
     fi
 }
 sourceFiles() {
-    if [ $SHELL == "/bin/zsh" ]; then
+    if [[ $SHELL == *"zsh"* ]]; then
         source ~/.zshrc
     elif [ $SHELL == "bin/bash" ]; then
         source ~/.bashrc
@@ -42,3 +51,4 @@ alias dirs="ls -lah | grep '^d'"
 alias vi="vim"
 alias realjava="sudo ps aux | grep java | grep -vE '(eclipse|grep)'"
 alias netrestart="sudo ifdown eth0 && sudo ifup eth0"
+alias fport="findListeningPort"
