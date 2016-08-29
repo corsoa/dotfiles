@@ -1,0 +1,8 @@
+#!/bin/bash
+FILES_TO_SOURCE=("ssh_load" "bash_aliases" "aliases" "work_aliases" "machines" "work_machines" "exports" "work_exports" "aaronrc")
+for i in "${FILES_TO_SOURCE[@]}"
+do
+    if [ -f ~/."$i" ]; then
+        source ~/."$i"
+    fi
+done

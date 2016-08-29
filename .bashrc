@@ -1,4 +1,4 @@
-# .bashrc
+#!/bin/bash
 
 # If not running interactively, don't do anything
 case $- in
@@ -138,38 +138,8 @@ proml
 PATH=${HOME}/bin:${PATH}
 # Note: ~/.ssh/environment should not be used, as it
 #       already has a different purpose in SSH.
-if [ -f ~/.ssh_load ]; then
-    source ~/.ssh_load
-fi
-
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
-fi
-
-if [ -f ~/.aliases ]; then
-    source ~/.aliases
-fi
-
-if [ -f ~/.machines ]; then
-  source ~/.machines
-fi
-
+source ~/.sourcer
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-if [ -f ~/.work_aliases ]; then
-  source ~/.work_aliases
-fi
-
-if [ -f ~/.work_machines ]; then
-  source ~/.work_machines
-fi
-
-if [ -f ~/.exports ]; then
-    source ~/.exports
-fi
-
-if [ -f ~/.work_exports ]; then
-    source ~/.work_exports
-fi
 unset env
 

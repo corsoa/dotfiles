@@ -60,42 +60,6 @@ if [[ $(whoami) = "root" ]]; then
 fi
 source $ZSH/oh-my-zsh.sh
 
-if [ -f ~/.ssh_load ]; then
-    source ~/.ssh_load
-fi
-
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
-fi
-
-if [ -f ~/.aliases ]; then
-    source ~/.aliases
-fi
-
-if [ -f ~/.machines ]; then
-  source ~/.machines
-fi
-
-if [ -f ~/.work_machines ]; then
-  source ~/.work_machines
-fi
-
-if [ -f ~/.work_aliases ]
-  then
-  source ~/.work_aliases
-fi
-
-if [ -f /home/aaron/.aaronrc ]
-  then
-  source /home/aaron/.aaronrc
-fi
-
-if [ -f ~/.exports ]; then
-  source ~/.exports 
-fi
-
-if [ -f ~/.work_exports ]; then
-    source ~/.work_exports
-fi
+source ~/.sourcer
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
