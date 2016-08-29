@@ -29,7 +29,7 @@ if ! command_exists pip; then
 fi
 if ! command_exists fpp ; then
     git clone https://github.com/facebook/pathpicker.git
-    cd PathPicker
+    cd pathpicker
     ln -fs "$(pwd)/fpp" /usr/local/bin/fpp
 fi
 
@@ -46,7 +46,7 @@ done
 #sudo ln -fs $DIR/git_diff_wrapper /usr/bin/git_diff_wrapper 
 
 #reassign vi to vim
-#sudo ln -fs /usr/bin/vim /usr/bin/vi
+sudo ln -fs /usr/bin/vim /usr/bin/vi
 
 #do a vundle install
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
@@ -54,6 +54,7 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
 fi
 
 vim +PluginInstall +qall
-
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+~/.tmux/plugins/tpm/bin/install_plugins
 #reload tmux conf in case we're already in a tmux session
 tmux source-file ~/.tmux.conf
