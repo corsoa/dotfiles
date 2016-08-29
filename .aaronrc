@@ -3,6 +3,7 @@
 export NVM_DIR="/home/aaron/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+export PATH="/home/aaron/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
@@ -18,7 +19,6 @@ PERL5LIB="/home/aaron/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/aaron/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/aaron/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/aaron/perl5"; export PERL_MM_OPT;
-export PATH="/home/aaron/.pyenv/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/home/aaron/atom-workspace/flow-bin/:/home/aaron/.pyevn/bin"
 PATH="/home/aaron/perl5/bin${PATH+:}${PATH}";
