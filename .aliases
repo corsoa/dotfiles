@@ -17,8 +17,9 @@ command_exists () {
     type "$1" &> /dev/null ;
 }
 findListeningPort() {
-    theCmd=$(sudo netstat -tulpn | grep $1)
-    if [ $? -eq 0 ] && [ -n $theCmd ]; then
+    #ss is better than netstat at detecting wrappers like pm2
+    theCmd=$(sudo ss -nlp | grep -iE "$1")
+    if [ $? -eq 0 ] && [ -n "$theCmd" ]; then
         echo $theCmd 
     else
         echo "Nothing listening on $1"
@@ -46,6 +47,7 @@ if command_exists gls ; then
 fi
 alias cl="clear"
 alias ll="ls -lah --color=auto"
+alias lt="ls -laht --color=auto"
 alias la='ls -A --color=auto'
 alias l='ls -CF --color=auto'
 alias lol='ll $(find . -maxdepth 1 -type l -print)'
