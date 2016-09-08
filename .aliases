@@ -1,4 +1,12 @@
 #!/bin/bash
+#alises for job control - make zsh behave like bash
+disown() {
+    if [[ $# -eq 1 && $1 = - ]]; then
+        builtin disown %-
+    else
+        builtin disown %"$@"
+    fi
+}
 bg() {
     if [[ $# -eq 1 && $1 = - ]]; then
         builtin bg %-

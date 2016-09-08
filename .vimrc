@@ -47,7 +47,7 @@ filetype plugin indent on    " required
 filetype plugin on
 
 map <C-n> :NERDTreeToggle<CR>
-
+map <C-b> :%!python -m json.tool<CR>
 "Disable arrow keys on normal mode 
 map <up> <nop>
 map <down> <nop>
