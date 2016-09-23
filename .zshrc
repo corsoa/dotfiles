@@ -1,5 +1,13 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/$(whoami)/.oh-my-zsh
+if [ -d "/home/$(whoami)/.oh-my-zsh" ];
+then
+    export ZSH=/home/$(whoami)/.oh-my-zsh
+elif [ -d "/Users/$(whoami)/.oh-my-zsh" ];
+then
+    export ZSH=/Users/$(whoami)/.oh-my-zsh
+elif [[ $(whoami) = "root" ]]; then
+    export ZSH="/root/.oh-my-zsh"
+fi
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -55,9 +63,6 @@ DISABLE_AUTO_TITLE=true
 keytimeout=1
 # User configuration
 
-if [[ $(whoami) = "root" ]]; then
-    export ZSH="/root/.oh-my-zsh"
-fi
 source $ZSH/oh-my-zsh.sh
 
 source ~/.sourcer
