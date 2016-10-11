@@ -17,7 +17,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'NLKNguyen/papercolor-theme'
+"Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
 "Plugin 'suan/vim-instant-markdown'
@@ -29,12 +29,13 @@ Plugin 'scrooloose/nerdcommenter'
 " evaluating
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'morhetz/gruvbox'
 "All of your Plugins must be added before the following line
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -93,8 +94,7 @@ set timeout timeoutlen=500
 
 "highlight current
 set cursorline
-set cursorcolumn
-let &colorcolumn=join(range(101,255),',')
+"let &colorcolumn=join(range(101,255),',')
 
 " statusline
 set laststatus=2
@@ -128,7 +128,7 @@ let g:airline_powerline_fonts=1
 let g:airline_theme='powerlineish'
 set background=dark
 syntax on
-colorscheme PaperColor 
+colorscheme Gruvbox
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
