@@ -127,7 +127,7 @@ let g:airline_powerline_fonts=1
 let g:airline_theme='powerlineish'
 set background=dark
 syntax on
-colorscheme Gruvbox
+colorscheme gruvbox
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
