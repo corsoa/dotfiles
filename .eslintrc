@@ -1,21 +1,15 @@
 {
   "extends": "airbnb",
   "env": {
-      "browser": true,
-      "node": true,
-      "jquery": true,
-      "jasmine": true,
-      "amd": "true",
-      "es6": true
+      "es6": true,
+      "mocha": true
   },
   "globals": {
-    "nmsweb": true,
-    "angular": true
   },
   "ecmaVersion": 6,
   "rules": {
       "no-var": 0,
-      "indent": ["error", 4],
+      "indent": ["error", 2],
       "brace-style": [2, "stroustrup", { "allowSingleLine": true }],
       "spaced-comment": "warn",
       "no-underscore-dangle": "warn",
