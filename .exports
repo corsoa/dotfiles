@@ -13,5 +13,12 @@ export NVM_DIR="/home/$(whoami)/.nvm"
 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  
 
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 [[ -s "/home/$(whoami)/.gvm/scripts/gvm" ]] && source "/home/$(whoami)/.gvm/scripts/gvm"
 export PATH=$PATH:/usr/local/node/bin
+if [ ! $ZSH ]; then
+    source ~/.bin/tmuxinator.bash
+fi
