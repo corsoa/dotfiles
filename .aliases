@@ -21,6 +21,11 @@ fg() {
         builtin fg %"$@"
     fi
 }
+_tmux_send_keys_all_panes_ () {
+  for _pane in $(tmux list-panes -F '#P'); do
+    tmux send-keys -t ${_pane} "$@"
+  done
+}
 command_exists () {
     type "$1" &> /dev/null ;
 }

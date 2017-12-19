@@ -1,28 +1,31 @@
 #Anything specific to my user or nonstandard program environmental exports goes here
 
-export NVM_DIR="/home/aaron/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-export PATH="/home/aaron/.pyenv/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-[ -s "/home/aaron/.dnx/dnvm/dnvm.sh" ] && . "/home/aaron/.dnx/dnvm/dnvm.sh" # Load dnvm
+[ -s "$HOME/.dnx/dnvm/dnvm.sh" ] && . "$HOME/.dnx/dnvm/dnvm.sh" # Load dnvm
 
 # The next line updates PATH for the Google Cloud SDK.
-source '/home/aaron/google-cloud-sdk/path.zsh.inc'
+source '$HOME/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables shell command completion for gcloud.
-source '/home/aaron/google-cloud-sdk/completion.zsh.inc'
+source '$HOME/google-cloud-sdk/completion.zsh.inc'
 
-PERL5LIB="/home/aaron/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/aaron/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/aaron/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/aaron/perl5"; export PERL_MM_OPT;
+PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$PATH:/home/aaron/atom-workspace/flow-bin/:/home/aaron/.pyevn/bin"
-PATH="/home/aaron/perl5/bin${PATH+:}${PATH}";
+export PATH="$PATH:$HOME/atom-workspace/flow-bin/:$HOME/.pyevn/bin"
+PATH="$HOME/perl5/bin${PATH+:}${PATH}";
+export PATH=$PATH:$HOME/atom-workspace/depot_tools
+export PYTHONPATH=$PYTHONPATH:$HOME/atom-workspace/depot_tools
 export PATH;
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/aaron/.sdkman"
-[[ -s "/home/aaron/.sdkman/bin/sdkman-init.sh" ]] && source "/home/aaron/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+

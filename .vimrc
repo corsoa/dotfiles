@@ -81,13 +81,13 @@ set smartindent
 set cindent
 set copyindent
 set preserveindent
-set esckeys
+" set esckeys
 set ignorecase
 set foldmethod=manual
 set clipboard+=unnamedplus
 set t_Co=256
-if exists('$TMUX')
-    set term=screen-256color
+if exists('$TMUX') && has('vim')
+  set term=screen-256color
 endif
 set timeout timeoutlen=500
 
