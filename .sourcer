@@ -6,6 +6,6 @@ do
         source ~/."$i"
     fi
 done
-if [ $(whoami) = "aaron" ]; then
+if [ $(whoami) = "haxis" ]; then
     source ~/.aaronrc
 fi
