@@ -1,12 +1,10 @@
 "*":
-  "exception-reporting":
-    userId: "52481261-8251-29dc-4862-f1a0a6a91517"
-  welcome:
-    showOnStartup: false
+  "api-workbench": {}
   core:
     disabledPackages: [
       "linter-jscs"
     ]
+    telemetryConsent: "no"
     themes: [
       "atom-dark-ui"
       "atom-dark-syntax"
@@ -14,10 +12,13 @@
   editor:
     invisibles: {}
     showIndentGuide: true
-  "tree-view": {}
-  "api-workbench": {}
+  "exception-reporting":
+    userId: "52481261-8251-29dc-4862-f1a0a6a91517"
   "linter-jscs":
     configPath: ".jscsrc"
+  "tree-view": {}
+  welcome:
+    showOnStartup: false
 ".ini.source":
   editor:
     showInvisibles: true
