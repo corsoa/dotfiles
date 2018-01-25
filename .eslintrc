@@ -2,15 +2,20 @@
   "extends": "airbnb",
   "env": {
       "es6": true,
-      "mocha": true
+      "mocha": true,
+      "browser": false,
+      "node": true
   },
   "globals": {
   },
-  "ecmaVersion": 6,
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
   "rules": {
-      "no-var": 0,
+      "no-var": 1,
       "indent": ["error", 2],
       "brace-style": [2, "stroustrup", { "allowSingleLine": true }],
+      "arrow-body-style": 0,
       "spaced-comment": "warn",
       "no-underscore-dangle": "warn",
       "prefer-arrow-callback": 1,
