@@ -10,3 +10,5 @@
 	prompt = false
 [alias]
 	d = difftool
+[credential]
+	helper = cache

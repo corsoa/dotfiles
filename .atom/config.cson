@@ -1,8 +1,22 @@
 "*":
   "api-workbench": {}
   core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+        ".flowconfig"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     disabledPackages: [
       "linter-jscs"
+      "tree-view"
     ]
     telemetryConsent: "no"
     themes: [
@@ -16,6 +30,28 @@
     userId: "52481261-8251-29dc-4862-f1a0a6a91517"
   "linter-jscs":
     configPath: ".jscsrc"
+  "linter-ui-default":
+    panelHeight: 252
+  nuclide:
+    "nuclide-remote-projects":
+      connectionProfiles: [
+        {
+          deletable: true
+          displayTitle: "iuppes"
+          params:
+            displayTitle: "iuppes"
+            username: "haxis"
+            server: "104.196.133.228"
+            cwd: "/var/www/html"
+            sshPort: "22"
+            authMethod: "SSL_AGENT"
+            pathToPrivateKey: "/home/haxis/.ssh/google_compute_engine"
+            remoteServerCommand: ""
+          saveable: true
+        }
+      ]
+    use:
+      "atom-ide-diagnostics-ui": false
   "tree-view": {}
   welcome:
     showOnStartup: false
