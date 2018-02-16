@@ -21,6 +21,6 @@ export GOROOT_BOOTSTRAP=/usr/lib/go-1.9
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 export PATH=$PATH:/usr/local/node/bin
-if [ ! $ZSH ]; then
-    source ~/.bin/tmuxinator.bash
-fi
+#if [ ! $ZSH ]; then
+#  source ~/.bin/tmuxinator.bash
+#fi
