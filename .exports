@@ -7,6 +7,8 @@ export TERM="xterm-256color"
 export ENHANCED_PROMPT=true
 export GIT_PROMPT_ON=true
 export GIT_PROMPT_DETAILED=true
+export VAGRANT_PREFER_SYSTEM_BIN=1
+
 export PATH=$PATH:$HOME/.tfenv/bin
 
 export NVM_DIR="$HOME/.nvm"
