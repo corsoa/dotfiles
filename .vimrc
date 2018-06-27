@@ -154,4 +154,10 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntatic_javascript_eslint_exe = 'npm run eslint --'
 
+let g:syntastic_quiet_messages = {
+    \ "!level":  "errors",
+    \ "type":    "style",
+    \ "regex":   '\m\[C03\d\d\]',
+    \ "file:p":  ['\m^/usr/include/', '\m\c\.h$'] }
