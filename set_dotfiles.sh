@@ -74,6 +74,8 @@ if [ ! -d ~/.tmux/plugins/tpm ]; then
 	~/.tmux/plugins/tpm/bin/install_plugins
 fi
 
+#todo: install nvm, pyenv by default
+
 echo "changing shell"
 chsh -s $(which zsh)
 source ~/.zshrc

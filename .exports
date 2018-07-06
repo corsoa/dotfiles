@@ -26,3 +26,10 @@ export PATH=$PATH:/usr/local/node/bin
 #if [ ! $ZSH ]; then
 #  source ~/.bin/tmuxinator.bash
 #fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
