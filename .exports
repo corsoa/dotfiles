@@ -11,6 +11,12 @@ export VAGRANT_PREFER_SYSTEM_BIN=1
 
 export PATH=$PATH:$HOME/.tfenv/bin
 
+if [[ $(uname -s) == "Darwin" ]]; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+else 
+  export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+fi
+
 export PAGER=$(which less)
 
 export NVM_DIR="$HOME/.nvm"
@@ -35,3 +41,4 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(goenv init -)"
+
