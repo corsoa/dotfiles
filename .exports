@@ -38,7 +38,4 @@ export PATH=$PATH:/usr/local/node/bin
 #fi
 
 export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-eval "$(goenv init -)"
 

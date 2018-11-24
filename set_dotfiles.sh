@@ -77,7 +77,9 @@ fi
 #todo: install nvm, pyenv by default
 
 echo "changing shell"
-chsh -s $(which zsh)
+# note: below did not work on systems like crostini where we don't have root password via prompt
+# chsh -s $(which zsh)
+sudo usermod -s $(which zsh) $(whoami)
 source ~/.zshrc
 
 #reload tmux conf in case we're already in a tmux session
