@@ -33,10 +33,10 @@ export PATH="$GOENV_ROOT/bin:$PATH"
 export GOPATH="$HOME/go"
 
 export PATH=$PATH:/usr/local/node/bin
-export PATH=$PATH:$HOME/.local/bin
 #if [ ! $ZSH ]; then
 #  source ~/.bin/tmuxinator.bash
 #fi
 
+eval "$(pyenv init -)"
 export PATH="$HOME/.pyenv/bin:$PATH"
 

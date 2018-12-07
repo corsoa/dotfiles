@@ -19,7 +19,6 @@ export WORKON_HOME="/opt/virtual_env/"
 #
 # Note: pyenv and goenv not installed by default in dotfiles
 
-eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(goenv init -)"
 #
