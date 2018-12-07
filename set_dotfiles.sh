@@ -42,11 +42,15 @@ if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
 
-#command line tools
+#python environment
+if ! command_exists pyenv; then
+	curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+fi
 if ! command_exists pip; then
 	wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py
 	sudo python get-pip.py
 fi
+#command line tools
 if ! command_exists fpp ; then
 	if [ ! -d ~/.pathpicker ]; then
 		git clone https://github.com/facebook/pathpicker.git ~/.pathpicker
