@@ -16,6 +16,13 @@ export PYTHONPATH=$PYTHONPATH:$HOME/atom-workspace/depot_tools
 #
 source "/usr/local/bin/virtualenvwrapper.sh"
 export WORKON_HOME="/opt/virtual_env/"
+#
+# Note: pyenv and goenv not installed by default in dotfiles
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+eval "$(goenv init -)"
+#
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 
