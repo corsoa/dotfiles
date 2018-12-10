@@ -45,6 +45,7 @@ fi
 #python environment
 if ! command_exists pyenv; then
 	curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+  git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 fi
 if ! command_exists pip; then
 	wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py

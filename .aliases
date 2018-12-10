@@ -88,3 +88,4 @@ alias fport="findListeningPort"
 alias dotfiles="find . -maxdepth 1 -type f | cut -d '/' -f2- | grep -iE '^\.' | xargs ls -lah --color=auto"
 alias onlyfiles="find . -maxdepth 1 -type f | cut -d '.' -f2- | cut -c 2- | grep -vE '^\.' | xargs ls -lah --color=auto"
 alias grepdotfiles=grepdotfiles
+alias stockdale="whoami && hostname && history | tail -n 5"
