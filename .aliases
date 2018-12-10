@@ -55,8 +55,12 @@ sourceFiles() {
         source ~/.bashrc
     fi
 }
+grepdotfiles() {
+  # helper to find defined aliases in dotfiles excluding history
+  grep -RiE $1 $(find . -maxdepth 1 -type l,f | cut -d '/' -f2 | grep -E '^\.' | grep -vE '(history|zcompdump)')
+}
 if command_exists gls ; then
-    alias ls='gls --color=auto' #use ls from homebrewe install of coreutils if available
+  alias ls='gls --color=auto' #use ls from homebrewe install of coreutils if available
 fi
 alias cl="clear"
 alias ll="ls -lah --color=auto"
@@ -83,3 +87,4 @@ alias netrestart="sudo ifdown eth0 && sudo ifup eth0"
 alias fport="findListeningPort"
 alias dotfiles="find . -maxdepth 1 -type f | cut -d '/' -f2- | grep -iE '^\.' | xargs ls -lah --color=auto"
 alias onlyfiles="find . -maxdepth 1 -type f | cut -d '.' -f2- | cut -c 2- | grep -vE '^\.' | xargs ls -lah --color=auto"
+alias grepdotfiles=grepdotfiles
