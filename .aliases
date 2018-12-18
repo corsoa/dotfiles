@@ -42,7 +42,7 @@ tmuxattach() {
     tmux attach-session -t $1
 }
 tmuxDefaultJoin() {
-    if tmux ls 2>&1 | grep -iE '(failed|no server|no current session)'; then
+    if tmux ls 2>&1 | grep -iE '(failed|no server|no current session|no session)'; then
         tmux new -s aaron
     else
         tmux attach-session -t aaron
