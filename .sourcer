@@ -1,5 +1,16 @@
 #!/bin/bash
-FILES_TO_SOURCE=("ssh_load" "bash_aliases" "aliases" "work_aliases" "machines" "work_machines" "exports" "work_exports")
+if [ -f ~/.machine_type ]; then
+  source ~/.machine_type
+fi
+if [ ! -z $MACHINE_TYPE ] && [ $MACHINE_TYPE = "home" ]; then
+  IS_WORK_MACHINE=false
+else
+  IS_WORK_MACHINE=true
+fi
+FILES_TO_SOURCE=("ssh_load" "bash_aliases" "aliases" "machines" "exports" )
+if [ $IS_WORK_MACHINE = "true" ]; then
+  FILES_TO_SOURCE+=("work_aliases" "work_machines" "work_exports")
+fi
 for i in "${FILES_TO_SOURCE[@]}"
 do
     if [ -f ~/."$i" ]; then
