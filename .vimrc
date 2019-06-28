@@ -30,6 +30,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'morhetz/gruvbox'
+Plugin 'leafgarland/typescript-vim'
 "All of your Plugins must be added before the following line
 
 call vundle#end()            " required
@@ -154,6 +155,7 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 let g:syntatic_javascript_eslint_exe = 'npm run eslint --'
 
 let g:syntastic_quiet_messages = {

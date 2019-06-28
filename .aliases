@@ -21,15 +21,15 @@ fg() {
         builtin fg %"$@"
     fi
 }
-_tmux_send_keys_all_panes_ () {
+function _tmux_send_keys_all_panes_ () {
   for _pane in $(tmux list-panes -F '#P'); do
     tmux send-keys -t ${_pane} "$@"
   done
 }
-command_exists () {
+function command_exists () {
     type "$1" &> /dev/null ;
 }
-findListeningPort() {
+function findListeningPort() {
     #ss is better than netstat at detecting wrappers like pm2
     theCmd=$(sudo ss -nlp | grep -iE "$1")
     if [ $? -eq 0 ] && [ -n "$theCmd" ]; then
@@ -38,24 +38,24 @@ findListeningPort() {
         echo "Nothing listening on $1"
     fi
 }
-tmuxattach() {
+function tmuxattach() {
     tmux attach-session -t $1
 }
-tmuxDefaultJoin() {
+function tmuxDefaultJoin() {
     if tmux ls 2>&1 | grep -iE '(failed|no server|no current session|no session)'; then
         tmux new -s aaron
     else
         tmux attach-session -t aaron
     fi
 }
-sourceFiles() {
+function sourceFiles() {
     if [[ $SHELL == *"zsh"* ]]; then
         source ~/.zshrc
     elif [ $SHELL == "bin/bash" ]; then
         source ~/.bashrc
     fi
 }
-grepdotfiles() {
+function grepdotfiles() {
   # helper to find defined aliases in dotfiles excluding history
   grep -RiE $1 $(find . -maxdepth 1 -type l,f | cut -d '/' -f2 | grep -E '^\.' | grep -vE '(history|zcompdump)')
 }
@@ -89,3 +89,6 @@ alias dotfiles="find . -maxdepth 1 -type f | cut -d '/' -f2- | grep -iE '^\.' | 
 alias onlyfiles="find . -maxdepth 1 -type f | cut -d '.' -f2- | cut -c 2- | grep -vE '^\.' | xargs ls -lah --color=auto"
 alias grepdotfiles=grepdotfiles
 alias stockdale="whoami && hostname && history | tail -n 5"
+alias wats="cat package.json | jq '.scripts'"
+alias watd="cat package.json | jq '.dependencies'"
+alias watdd="cat package.json | jq '.devDependencies'"

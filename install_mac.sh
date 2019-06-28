@@ -9,6 +9,7 @@ brew install gnu-indent --with-default-names
 brew install gnu-sed --with-default-names
 brew install gnu-tar --with-default-names
 brew install gnu-which --with-default-names
+brew install gnu-getopt --with-default-names
 brew install gnutls
 brew install grep --with-default-names
 brew install gzip
@@ -33,3 +34,6 @@ brew install rsync
 brew install svn
 brew install unzip
 brew install parallel
+brew install tree
+brew install tfenv
+brew cask install docker
