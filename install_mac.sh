@@ -36,4 +36,5 @@ brew install unzip
 brew install parallel
 brew install tree
 brew install tfenv
+brew install mysql
 brew cask install docker

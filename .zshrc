@@ -69,10 +69,8 @@ plugins=(
   composer
   npm
   pip
-  debian
   ember-cli
   zsh-syntax-highlighting
-  aws
   docker
   mvn
   gradle
@@ -82,7 +80,7 @@ plugins=(
   gulp
   golang
 )
-
+# TODO: install debian plugin conditionally
 DISABLE_AUTO_TITLE=true
 keytimeout=1
 # User configuration
