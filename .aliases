@@ -59,6 +59,9 @@ grepdotfilesFunc() {
   # helper to find defined aliases in dotfiles excluding history
   grep -RiE $1 $(find . -maxdepth 1 -type l,f | cut -d '/' -f2 | grep -E '^\.' | grep -vE '(history|zcompdump)')
 }
+findMacPort() {
+  sudo lsof -nP -iTCP:$1
+}
 if command_exists gls ; then
   alias ls='gls --color=auto' #use ls from homebrewe install of coreutils if available
 fi
@@ -95,3 +98,9 @@ alias watdd="cat package.json | jq '.devDependencies'"
 alias glog="git log --date=local"
 # mac specific aliases
 alias grep="ggrep"
+alias nrt="npm run test"
+alias nru="npm run test-unit"
+alias nrl="npm run lint"
+alias macport=findMacPort
+alias grepnm="grep -RiE --exclude-dir=node_modules"
+alias greppy="grep -RiE --exclude-dir=.eggs --exclude-dir=.git --exclude-dir=build --exclude-dir=lib"
