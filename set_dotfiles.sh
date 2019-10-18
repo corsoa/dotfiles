@@ -66,12 +66,13 @@ fi
 #reassign vi to vim
 sudo ln -fs /usr/bin/vim /usr/bin/vi
 
-#do a vundle install
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+#do a vim-plug install
+if [ ! -f ~/.vim/autoload/plug.vim ]; then
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-vim +PluginInstall +qall
+vim +PlugInstall +qall
 
 #install tpm if it's not there already
 if [ ! -d ~/.tmux/plugins/tpm ]; then

@@ -1,39 +1,28 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=~/.fzf
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
+call plug#begin()
 " frequently used
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-"Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'benmills/vimux'
-"Plugin 'suan/vim-instant-markdown'
-Plugin 'kshenoy/vim-signature'
-Plugin 'tpope/vim-surround'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'scrooloose/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
+Plug 'kshenoy/vim-signature'
+Plug 'tpope/vim-surround'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdcommenter'
 " evaluating
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'morhetz/gruvbox'
-Plugin 'leafgarland/typescript-vim'
-"All of your Plugins must be added before the following line
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'morhetz/gruvbox'
+Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'
+call plug#end()
 
-call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 filetype plugin on
@@ -148,6 +137,8 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_symbols.space = "\ua0"
 set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12
+"Syntax Highlight
+let g:javascript_plugin_jsdoc=1
 "Syntax checkers
 let g:JSHintHighlightErrorLine=0
 let g:syntastic_always_populate_loc_list=1

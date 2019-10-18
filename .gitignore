@@ -1,1 +1,4 @@
 .atom
+.vim/autoload/
+.vim/bundle/
+.vim/plugged/
