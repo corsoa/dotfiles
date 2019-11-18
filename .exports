@@ -10,11 +10,13 @@ export VAGRANT_PREFER_SYSTEM_BIN=1
 export PAGER=$(which less)
 
 export PATH=$PATH:$HOME/.tfenv/bin
+export PATH=$PATH:/usr/local/Cellar/mysql/8.0.18/bin
 export PATH=$PATH:/usr/local/node/bin
 export PATH="$PATH:$HOME/.rvm/bin"
-export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
-export GOPATH="$HOME/go"
+export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
+export PATH=$PATH:$HOME/go/bin
 
 if [[ $(uname -s) == "Darwin" ]]; then
   export JAVA_HOME=$(/usr/libexec/java_home)
