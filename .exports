@@ -10,7 +10,6 @@ export VAGRANT_PREFER_SYSTEM_BIN=1
 export PAGER=$(which less)
 
 export PATH=$PATH:$HOME/.tfenv/bin
-export PATH=$PATH:/usr/local/Cellar/mysql/8.0.18/bin
 export PATH=$PATH:/usr/local/node/bin
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$GOENV_ROOT/bin:$PATH"
