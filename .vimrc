@@ -60,6 +60,7 @@ map "+p :r!xclip -o -sel clip
 "sane copy paste
 vnoremap <C-c> "*y
 
+cmap w!! w !sudo tee > /dev/null %
 
 set encoding=utf8
 set nu

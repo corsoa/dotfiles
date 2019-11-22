@@ -9,6 +9,8 @@ elif [[ $(whoami) = "root" ]]; then
     export ZSH="/root/.oh-my-zsh"
 fi
 
+ANTIBODY_HOME="$(antibody home)"
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -70,7 +72,6 @@ plugins=(
   npm
   pip
   ember-cli
-  zsh-syntax-highlighting
   docker
   mvn
   gradle
@@ -84,9 +85,14 @@ plugins=(
 DISABLE_AUTO_TITLE=true
 keytimeout=1
 # User configuration
+export ZSH="$ANTIBODY_HOME"/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh
+DISABLE_AUTO_UPDATE="true"
+antibody bundle robbyrussell/oh-my-zsh
 
 source $ZSH/oh-my-zsh.sh
 
 source ~/.sourcer
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
