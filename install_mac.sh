@@ -37,8 +37,12 @@ brew install parallel
 brew install tree
 brew install tfenv
 brew install mysql
-brew cask install docker
 brew install w3m
 brew install dive
 brew install kubectl
 brew install kubectx
+
+brew cask install docker
+brew cask install mysqlworkbench
+
+brew tap homebrew/services
