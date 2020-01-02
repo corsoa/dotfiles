@@ -10,7 +10,7 @@ else
 fi
 FILES_TO_SOURCE=("ssh_load" "bash_aliases" "aliases" "machines" "exports" )
 if [ $IS_WORK_MACHINE = "true" ]; then
-  FILES_TO_SOURCE+=("work_aliases" "work_machines" "work_exports")
+  FILES_TO_SOURCE+=("work_aliases" "work_machines" "work_exports", "work_auth")
 fi
 for i in "${FILES_TO_SOURCE[@]}"
 do
