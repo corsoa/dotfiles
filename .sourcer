@@ -8,9 +8,9 @@ if [ ! -z $MACHINE_TYPE ] && [ $MACHINE_TYPE = "home" ]; then
 else
   IS_WORK_MACHINE=true
 fi
-FILES_TO_SOURCE=("ssh_load" "bash_aliases" "aliases" "machines" "exports" )
+FILES_TO_SOURCE=("ssh_load" "bash_aliases" "aliases" "machines")
 if [ $IS_WORK_MACHINE = "true" ]; then
-  FILES_TO_SOURCE+=("work_aliases" "work_machines" "work_exports", "work_auth")
+  FILES_TO_SOURCE+=("work_aliases" "work_machines" "work_exports" "work_auth")
 fi
 for i in "${FILES_TO_SOURCE[@]}"
 do
@@ -18,6 +18,9 @@ do
         source ~/."$i"
     fi
 done
+
+source ~/.exports
+
 if [ $(whoami) = "haxis" ]; then
     source ~/.aaronrc
 fi
