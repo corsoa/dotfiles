@@ -80,6 +80,11 @@ if [ ! -d ~/.tmux/plugins/tpm ]; then
 	~/.tmux/plugins/tpm/bin/install_plugins
 fi
 
+#install gvm
+if [ !-d ~/.gvm ]; then
+  bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+fi
+
 #todo: install nvm, pyenv by default
 
 echo "changing shell"
