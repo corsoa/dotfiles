@@ -88,11 +88,13 @@ keytimeout=1
 export ZSH="$ANTIBODY_HOME"/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 antibody bundle robbyrussell/oh-my-zsh
+source <(antibody init)
 
 source $ZSH/oh-my-zsh.sh
 
 source ~/.sourcer
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
